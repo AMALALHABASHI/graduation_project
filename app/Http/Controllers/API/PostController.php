@@ -11,6 +11,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use Illuminate\Support\Facades\Auth;
 
 
+
  
 
 class PostController extends BaseController
@@ -26,23 +27,11 @@ class PostController extends BaseController
         return $this->sendResponse(PostResource::collection($posts),
         'All Posts sent');
     }
+    
+    
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    //public function create()
-    //{
-        //
-    //}
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
+    
     public function store(Request $request)
     {
         $input = $request->all();

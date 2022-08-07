@@ -16,6 +16,8 @@ class Reply extends JsonResource
     {
         return [
             'reply_text'=> $this->reply_text,
-            
+            'name'=> $this->user->name,
+            'image'=> $this->user->user_image,
+
         ];    }
 }

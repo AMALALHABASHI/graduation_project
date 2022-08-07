@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\User;
 
 use Validator;
 use App\Http\Resources\Comment as CommentResource;
@@ -51,7 +52,7 @@ class CommentController extends BaseController
         return $this->sendResponse(CommentResource::collection($comments),'all comments ');
 
     }
-    
+   
    
     public function numcomment(Request $request){
         $input = $request->all();

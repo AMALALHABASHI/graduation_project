@@ -31,7 +31,18 @@ class BaseController extends Controller
 
 
     }
-     public function msgResponse($message){
+     public function sendtowResponse($result1,$result2,$message){
+        $response = [
+        'success' => true,
+        'data1'=> $result1,
+        'data2'=> $result2,
+        'message' => $message,
+        ];
+        return response()->json($response,200);
+
+
+    }
+    public function msgResponse($message){
         $response = [
         'success' => true,
         'message' => $message,
@@ -40,5 +51,6 @@ class BaseController extends Controller
 
 
     }
+
 
 }

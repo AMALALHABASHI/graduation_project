@@ -20,7 +20,7 @@ class CounselorController extends BaseController
      */
     public function index()
     {
-        $counselors=User::where('user_type',0)->get();
+        $counselors=User::where('user_type',1)->get();
         return $this->sendResponse(CounselorResource::collection($counselors),'all counselors');
     }
 

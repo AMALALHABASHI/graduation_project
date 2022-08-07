@@ -20,13 +20,13 @@ class ReplyController extends BaseController
         $input = $request->all();
         $validator=Validator::make($input, [
         'reply_text'=>'required',
-        'comment_id'=>'required',]);
+        'question_id'=>'required',]);
         if ($validator->fails()) {
            return $this->sendError('validate Error',$validator->errors());
         }
          $reply = Reply::create([
             'reply_text' => $request->reply_text,
-           'comment_id' =>$request->comment_id,
+           'question_id' =>$request->question_id,
            'user_id' =>Auth::id(),
         ]); 
 
@@ -41,12 +41,12 @@ class ReplyController extends BaseController
         
         $input = $request->all();
         $validator=Validator::make($input, [
-        'comment_id'=>'required',
+        'question_id'=>'required',
         ]);
         if ($validator->fails()) {
             return $this->sendError('validate Error',$validator->errors());
         }
-        $replies=Reply::where('comment_id',$request->comment_id)->get();
+        $replies=Reply::where('question_id',$request->question_id)->get();
         return $this->sendResponse(ReplyResource::collection($replies),'all replies ');
 
     }

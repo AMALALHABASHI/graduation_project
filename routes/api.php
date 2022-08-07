@@ -43,6 +43,8 @@ Route::middleware('auth:api')->group( function () {
     Route::post('numlike', [App\Http\Controllers\API\LikeController::class, 'numlike']);
 	Route::post('showreply', [App\Http\Controllers\API\ReplyController::class, 'show']);
     Route::post('storereply', [App\Http\Controllers\API\ReplyController::class, 'store']);
+    Route::resource('questions','API\QuestionController');
+
     
 
     

@@ -19,7 +19,7 @@ class EducatorController extends BaseController
      */
     public function index()
     {
-        $educators=User::where('user_type',1)->get();
+        $educators=User::where('user_type',0)->get();
         return $this->sendResponse(EducatorResource::collection($educators),'all educators');
     }
     
